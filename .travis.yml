@@ -1,0 +1,25 @@
+language: python
+python:
+- '3.6'
+install:
+- pip install -r requirements.txt
+services:
+- postgresql
+before_script:
+  - psql -c "CREATE DATABASE travisdb;" -U postgres
+before_install:
+  - export DATABASE_URL=postgres://postgres@localhost/travisdb
+script:
+- python3 manage.py makemigrations
+- python3 manage.py migrate
+- python manage.py test
+deploy:
+  provider: heroku
+  api_key:
+    secure: INEIIfl8qRj9Y4PhKII7A1W0FMVStqArvqOe2WtsUUcPcPXnshya526S7oinyH5cO7mCgdtAK73Sg+VntJW2ci/vPl/+ZyJYhEhKpyO1UCU31tY+MlQoV/R/fA7862uH4lddFEMJ8Fo4CjRfQjVqdFoS+Rv4MAijmrN0MqYwGzW5e7HKUU8z7JGz5XQ4/VF42n5AWZ5BzUcqhGO9/aZAFBUKIomAjbuN/a5QTNGKYzRObdvDmILb0rMPNuRYeBao24PKHVLjOUZ7Aaja69r4k6q52pk5yQB7eltwMYRP7PM0dIwDSYfUjc4HCbIR4UitPfYA2wiuU1wIz6v0M2Cpq3z9dQw5gF5HiUm6R/p/DFfqNOSKC9SjMFB/tcW2dBWxbKoz/fncRKiejLLMUVIEnEaKCvR+ncard2VctY5r3jFR+zhGaEujOLhgNctcDkBwTnf4ZVfAqBZq0pWRl4dygPncvI6h/Z9f9AYXC/y/56LNUbESjOzyXOSMMxqsvze824u3f7SWACEPu28NqXL1aZRpTFrATfUh5g8U90wE2xncgIruVrUog9uPevLJ7bihzIohZsSP43ILg/hFPP3gJzDUL9O0YKc3/ArEd8mZ8g/VtjQXdpFpNy8AwCxNVADSg8NXzIvDoUircUSIPD9hO8J+ds/Jzs2tKSGoFsuZJRI=
+  app: obscure-dawn-21722
+  on:
+    repo: uva-cs3240-f19/project-101-hooslist
+  run:
+    - "python3 manage.py makemigrations"
+    - "python3 manage.py migrate"

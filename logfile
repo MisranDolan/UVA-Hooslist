@@ -1,0 +1,16 @@
+2019-11-10 22:54:41.615 EST [47336] LOG:  listening on IPv6 address "::1", port 5432
+2019-11-10 22:54:41.615 EST [47336] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-11-10 22:54:41.618 EST [47336] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-11-10 22:54:41.641 EST [47337] LOG:  database system was shut down at 2019-11-10 22:53:35 EST
+2019-11-10 22:54:41.665 EST [47336] LOG:  database system is ready to accept connections
+2019-11-10 22:58:34.974 EST [47336] LOG:  received fast shutdown request
+2019-11-10 22:58:34.976 EST [47336] LOG:  aborting any active transactions
+2019-11-10 22:58:34.981 EST [47336] LOG:  background worker "logical replication launcher" (PID 47343) exited with exit code 1
+2019-11-10 22:58:34.981 EST [47338] LOG:  shutting down
+2019-11-10 22:58:34.991 EST [47336] LOG:  database system is shut down
+2019-11-10 22:58:55.485 EST [47417] LOG:  listening on IPv6 address "::1", port 5432
+2019-11-10 22:58:55.486 EST [47417] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-11-10 22:58:55.487 EST [47417] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-11-10 22:58:55.508 EST [47418] LOG:  database system was shut down at 2019-11-10 22:58:48 EST
+2019-11-10 22:58:55.518 EST [47417] LOG:  database system is ready to accept connections
+2019-11-10 22:59:28.757 EST [47429] FATAL:  database "ladmin" does not exist
